@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>摇一摇</title>
+  <script src='http://testwechat.hotol.cn/static/common/jquery-1.11.3.min.js'></script>
+</head>
+
+<body>
+  <div class="yyy">
+    <button class="yaoyiyao">摇一摇</button>
+	<p id='dmEvent'></p>
+  </div>
+  <script>
+    var x = y = z = last_x = last_y = last_z = 0,
+	last_update = 0,
+	diff_time = 0,
+	flag = false;
+    if (window.DeviceMotionEvent) {
+	  window.addEventListener('devicemotion', deviceMotionHandler, false);
+	} else {
+	  document.getElementById("dmEvent").innerHTML = "Not supported on your device."
+	}
+	function deviceMotionHandler(eventData){
+		var acceleration = eventData.accelerationIncludingGravity;
+		var current_time = new Date().valueOf();//当前时间的时间戳
+		var diff_time = current_time - last_update;
+		if(diff_time > 100){
+			last_update = current_time;
+			x = acceleration.x;
+			y = acceleration.y;
+			z = acceleration.z;
+			var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diff_time * 10000;
+			console.log(speed);
+			if(speed > 3000){
+				if(!flag){
+					flag = true;
+					alert('success');
+				}
+			}
+			last_x = x;
+			last_y = y;
+			last_z = z;			
+		}
+	}
+  </script>
+</body>
+
+</html>

@@ -19,10 +19,15 @@ gulp.task('image', function () {
     .pipe(imagemin())
     .pipe(gulp.dest('src/images'));
 });
+gulp.task('less', function () {
+  gulp.src('newweb/static/less/*.less')
+    .pipe(less())
+    .pipe(gulp.dest('newweb/static/css'))
+});
 gulp.task('css', function () {
-  gulp.src('newweb/css/**/*.css')
+  gulp.src('newweb/static/css/*.css')
     .pipe(cssmin())
-    .pipe(gulp.dest('src/css/'));
+    .pipe(gulp.dest('src/static/css/'));
 });
 /*gulp.task('index', function () { //复制文件
   return gulp.src('newweb/config.json', {
@@ -42,7 +47,7 @@ gulp.task('es6', function () {
       presets: [es2015]
     }))
     .pipe(uglify())
-    .pipe(gulp.dest('src/js'));
+    .pipe(gulp.dest('src/static/js'));
 });
 gulp.task('html', function () {
   var options = {
@@ -84,3 +89,9 @@ gulp.task('watch', function () {
   ], reload);
 });
 gulp.task('run', ['browser-sync', 'watch']);
+/*
+1.gulp less
+2.gulp run
+3.gulp build
+4.gulp clean
+*/

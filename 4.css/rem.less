@@ -1,0 +1,35 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+}
+
+@baseWidth: 750px;
+@baseFont: 75px;
+@rem: 75rem;
+
+html {
+    font-size: @baseFont;
+}
+
+@bps: 750px,414px,320px;
+
+.loop(@i: 1) when (@i <= length(@bps)) {
+    @bp: extract(@bps, @i);
+    @font: @bp/10;
+
+    @media only screen and (max-width: @bp) {
+        html {
+            font-size: @font !important;
+        }
+    }
+
+    .loop((@i + 1));
+}
+
+;.loop; 
+
+.head {
+    height: 100/@rem;
+    border-top: 60/@rem solid #ff0000;
+    background: #808080;
+}

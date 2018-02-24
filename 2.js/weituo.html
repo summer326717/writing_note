@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../wxapp/common.js"></script>
+    <script>
+        $(function () {
+            //window.onload = function () {
+            //    var oUl = document.getElementById("ul1");
+            //    var aLi = oUl.getElementsByTagName('li');
+            //    for (var i = 0; i < aLi.length; i++) {
+            //        aLi[i].onclick = function () {
+            //            alert(123 + i);
+            //        }
+            //    }
+            //}
+            window.onload = function () {
+                var oUl = document.getElementById("ul1");
+                oUl.onclick = function (ev) {
+                    var ev = ev || window.event;
+                    var target = ev.target || ev.srcElement;
+                    if (target.nodeName.toLowerCase() == 'li') {
+                        alert(123);
+                        alert(target.innerHTML);
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+    <button class="saoyisao">扫一扫</button>
+    <div class="div">
+        <p>111111111111</p>
+        <p>111111111111</p>
+        <p>1111111111111</p>
+        <p class="ddd">111111111111</p>
+    </div>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <input type="text" value="888" />
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</body>
+</html>

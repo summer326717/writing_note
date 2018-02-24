@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <script>
+    {
+      let a = 10;
+      var b = 1;
+    }
+    //a
+    //b
+    var bb = [];
+    for (let i = 0; i < 10; i++) {
+      //console.log(i);
+      bb[i] = function () {
+        //console.log(i);
+      }
+    }
+    //console.log(bb);
+    //console.log(i);
+    //bb[6]();//执行此函数时，let定义的i作用于代码块内，bb是全局变量，输出6。  
+    var aa = [];
+    for (var i = 0; i < 10; i++) {
+      //console.log(i);
+      aa[i] = function () {
+        //console.log(i);
+      }
+    }
+    //console.log(aa);
+    //console.log(i);
+    //aa[6]();//执行此函数时，全局变量i为10了，输出为10
+    //var a=((k=6)=>{console.log(k)})();
+    var constantize = (obj) => {
+      Object.freeze(obj);
+      Object.keys(obj).forEach((key, i) => {
+        if (typeof obj[key] === 'object') {
+          constantize(obj[key]);
+        }
+      });
+    };
+    let arr = ['a', 2, 3, 4, 5];
+    arr.map(function (k, v) {
+      console.log(k + ' ' + v);
+    })
+    arr.map(function (k, v) {
+      console.log(k + ' ' + v);
+    })
+  </script>
+</body>
+
+</html>

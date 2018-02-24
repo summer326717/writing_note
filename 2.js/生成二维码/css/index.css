@@ -1,0 +1,152 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, .wrap {
+    height: 100%;
+}
+
+body {
+    background: #F4F5F9;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.left_menu {
+    height: 900px;
+    width: 295px;
+    background: #ffffff;
+    box-shadow: #EDEDED 0 0 25px;
+}
+
+.left_menu, .right_con {
+    float: left;
+}
+
+    .left_menu .tit {
+        font-size: 29px;
+        color: #56C9A6;
+        text-align: center;
+        padding: 41px 0 87px 0;
+    }
+
+    .left_menu a {
+        color: #999999;
+        display: block;
+        padding-left: 100px;
+        line-height: 50px;
+    }
+
+        .left_menu a.active {
+            color: #222222;
+            font-size: 18px;
+            background: url("images/opt.png") 0 50% no-repeat;
+        }
+
+.right_con {
+    padding-bottom: 34px;
+    width: calc(100% - 295px);
+}
+
+    .right_con .con_top {
+        height: 81px;
+        padding-left: 980px;
+        padding-top: 33px;
+        border-bottom: 1px solid #E8E9EC;
+        margin-bottom: 44px;
+    }
+
+        .right_con .con_top a {
+            width: 112px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            color: #ffffff;
+            background: #56C9A6;
+            border-radius: 6px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+.con_left, .con_right {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.con_left {
+    padding-left: 65px;
+}
+
+.right_con .l_box {
+    width: 360px;
+    background: #ffffff;
+    box-shadow: #EDEDED 0 0 25px;
+    padding: 37px 24px 73px 24px;
+}
+
+    .right_con .l_box .tit {
+        color: #B3B3B3;
+        font-size: 20px;
+        padding: 37px 0 66px 0;
+        text-align: center;
+    }
+
+    .right_con .l_box input {
+        border: 2px solid #EAEAEA;
+        width: calc(100% - 20px);
+        height: 65px;
+        padding-left: 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    .right_con .l_box a {
+        height: 66px;
+        line-height: 66px;
+        width: 100%;
+        border-radius: 6px;
+        background: #56C9A6;
+        display: block;
+        font-size: 20px;
+        color: #ffffff;
+        text-align: center;
+        margin-top: 136px;
+    }
+
+.right_con .con_left .info {
+    color: #999999;
+    font-size: 14px;
+    margin-top: 107px;
+}
+
+.right_con .r_con {
+    width: 437px;
+    margin-left: 65px;
+    background: #ffffff;
+    box-shadow: #EDEDED 0 0 25px;
+    padding: 60px;
+    height: 587px;
+    position: relative;
+}
+
+    .right_con .r_con .bg {
+        width: 100%;
+        display: block;
+    }
+
+    .right_con .r_con .code {
+        position: absolute;
+        top: 310px;
+        left: 200px;
+    }
+
+    .right_con .r_con .number {
+        position: absolute;
+        right: 80px;
+        top: 110px;
+    }
